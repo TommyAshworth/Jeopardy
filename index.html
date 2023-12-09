@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeopardy</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Copse&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Jeopardy!</h1>
+      <button id="start-restart-btn">Start!</button>
+    </header>
+
+    <div id="loading-spinner" style="display: none">
+      <i class="fa fa-spin fa-spinner"></i>
+    </div>
+
+    <section id="jeopardy"></section>
+
+    <div id="restart-text" style="display: none">
+      <p>Click the button to play again!</p>
+    </div>
+
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="https://unpkg.com/lodash"></script>
+    <script src="jeopardy.js"></script>
+
+    <script>
+      // JavaScript for handling game initialization and UI interactions
+      // Put your custom JavaScript code here if needed
+      $(document).ready(function () {
+        $("#jeopardy").on("click", ".card-container", handleClick);
+
+        $("#start-restart-btn").on("click", function () {
+          setupAndStart();
+        });
+      });
+    </script>
+  </body>
+</html>
